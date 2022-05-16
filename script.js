@@ -3,10 +3,10 @@ function recieve() {
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             response = JSON.parse(this.responseText);
-            format(response);
+            console.log(this.response)
         }
     };
-    xmlhttp.open("GET", "server.php?q=" + guess, true);
+    xmlhttp.open("GET", "server.php?q=" + response, true);
     xmlhttp.send();
 }
 
