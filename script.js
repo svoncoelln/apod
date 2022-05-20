@@ -4,18 +4,22 @@ function recieve() {
     let xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            response = JSON.parse(this.responseText);
+            const response = JSON.parse(JSON.parse(this.responseText));
+            console.log(response);
             display(response);
-    }
+        }
     };
     xmlhttp.open("GET", "server.php", true);
     xmlhttp.send();
 }
 
 function display(data) {
-    let output = "";
-    for (let i = 0; i < data.length; i++) {
-        output += "<div class='col-md-4'><div class='card'><div class='card-body'><h5 class='card-title'>" + data[i].title + "</h5><p class='card-text'>" + data[i].description + "</p><a href='#' class='btn btn-primary'>Read more</a></div></div></div>";
-    }
-    document.getElementById("output").innerHTML = output;
+    let title = data.title
+    let url = data.url;
+    let date = data.date;
+    let explanation = data.explanation;
+    document.getElementById("title").innerHTML = title;
+    document.getElementById("show").innerHTML = "<img src="+url+">";
+    document.getElementById("date").innerHTML = date;
+    document.getElementById("explain").innerHTML = explanation;
 }
