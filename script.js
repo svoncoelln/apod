@@ -4,6 +4,7 @@ function recieve() {
     let xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
             const response = JSON.parse(JSON.parse(this.responseText));
             console.log(response);
             display(response);
@@ -25,13 +26,16 @@ function display(data) {
 }
 
 function sendDate(date) {
+    console.log(date);
     var xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
         if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
             const response = JSON.parse(JSON.parse(this.responseText));
             display(response);
         }
     };
     xhttp.open("GET", "server.php?date=" + date, true);
+    console.log(xhttp);
     xhttp.send();
 }
