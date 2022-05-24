@@ -38,3 +38,8 @@ form {
 #title {
     display: inline;
 }
+
+img {
+    max-width: 1100px;
+    height: auto;
+}
