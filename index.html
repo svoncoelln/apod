@@ -8,8 +8,8 @@
 <body>
   <div id="all">
     <h1 id="title"></h1>
-    <form onsubmit="sendDate(this.value)">
-        <input type="text" name="userDate" placeholder="YYYY-MM-DD">
+    <form onsubmit="sendDate(document.getElementById('date-entry').value); return false">
+        <input type="text" id="date-entry" name="date" placeholder="YYYY-MM-DD">
         <input type="submit" value="Submit">
     </form>
     <br>
