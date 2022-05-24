@@ -1,8 +1,8 @@
 <?php
 
-$date = $_GET["date"];
+if (isset($_GET["date"]) {
+    $date = $_GET["date"];
 
-if ($date != "") {
     $url = "https://api.nasa.gov/planetary/apod?api_key=ar8QWvWS7WdCm2dFrJ4RV0Fhww1WiNUoVb3MBBpy&date=" . "$date";
 
     $ch = curl_init();
